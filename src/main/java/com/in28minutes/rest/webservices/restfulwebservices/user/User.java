@@ -7,6 +7,8 @@ public class User {
     private String name;
     private Date birthDate;
 
+    private User() {}
+
     public User(Integer id, String name, Date birthDate) {
         this.id = id;
         this.name = name;

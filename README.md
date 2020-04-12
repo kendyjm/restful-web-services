@@ -4,7 +4,8 @@ The following was discovered as part of building this project:
 * The original package name 'com.in28minutes.rest.webservices.restful-web-services' is invalid and this project uses 'com.in28minutes.rest.webservices.restfulwebservices' instead.
 
 # Getting Started
-In IntelliJ, run maven goal spring-boot-run
+* In IntelliJ, run maven goal spring-boot-run
+* Enable Devtools with IntelliJ : https://mkyong.com/spring-boot/intellij-idea-spring-boot-template-reload-is-not-working/
  
 ### Reference Documentation
 For further reference, please consider the following sections:
