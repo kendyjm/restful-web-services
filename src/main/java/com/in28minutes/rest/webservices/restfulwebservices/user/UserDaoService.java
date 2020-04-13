@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 @Component
@@ -37,5 +38,24 @@ public class UserDaoService {
         }
         users.add(user);
         return user;
+    }
+
+    /**
+     *
+     * @param id
+     * @return deleted user
+     */
+    public User delete(int id) {
+        //users.removeIf(user -> user.getId() == id); not so efficient? see implementation
+        Iterator<User> iterator = users.iterator();
+        User userDeleted = null;
+        while(iterator.hasNext()) {
+            User user = iterator.next();
+            if( user.getId() == id ) {
+                userDeleted = user;
+                iterator.remove();
+            }
+        }
+        return userDeleted;
     }
 }
