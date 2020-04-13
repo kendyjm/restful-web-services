@@ -1,9 +1,11 @@
-# Read Me First
-The following was discovered as part of building this project:
+# Context
+* URL: https://www.udemy.com/course/microservices-with-spring-boot-and-spring-cloud/
 
-* The original package name 'com.in28minutes.rest.webservices.restful-web-services' is invalid and this project uses 'com.in28minutes.rest.webservices.restfulwebservices' instead.
+# Keywords
+* **Exception handling**: ResponseEntityExceptionHandler, @ControllerAdvice, ResponseEntity
+* **Validations** : @Valid, javax.validation.constraints.* (@Size, @Past etc)
 
-# Getting Started
+# Startup
 * In IntelliJ, run maven goal spring-boot-run
 * Enable Devtools with IntelliJ : https://mkyong.com/spring-boot/intellij-idea-spring-boot-template-reload-is-not-working/
  
