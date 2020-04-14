@@ -39,7 +39,7 @@ public class HelloWorldController {
     }
 
     @GetMapping(path = "/hello-world-internationalized")
-    public String helloWorldInternationalized(@RequestHeader(name = HttpHeaders.ACCEPT_LANGUAGE, required = false) Locale locale) {
-        return messageSource.getMessage("good.morning",null, locale);
+    public String helloWorldInternationalized(/*see LocaleContexteHolder! a pain to do that in every method @RequestHeader(name = HttpHeaders.ACCEPT_LANGUAGE, required = false) Locale locale*/) {
+        return messageSource.getMessage("good.morning",null, LocaleContextHolder.getLocale());
     }
 }

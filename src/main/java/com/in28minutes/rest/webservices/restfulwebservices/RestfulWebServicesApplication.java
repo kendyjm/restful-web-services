@@ -34,14 +34,15 @@ public class RestfulWebServicesApplication {
 	}
 
 	/**
+	 * REPLACED BY spring.messages.basename=messages
 	 * Where to find the messages.properties
 	 * See resouces/<basename>[_locale].properties
 	 * @return
 	 */
-	public  ResourceBundleMessageSource messageSource() {
+	/*public  ResourceBundleMessageSource messageSource() {
 		ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
 		messageSource.setBasename("messages");
 		return messageSource;
-	}
+	}*/
 	/* INTERNATIONALIZATION - END */
 }
