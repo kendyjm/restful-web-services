@@ -5,6 +5,7 @@
 * **Exception handling**: ResponseEntityExceptionHandler, @ControllerAdvice, ResponseEntity
 * **Validations** : @Valid, javax.validation.constraints.* (@Size, @Past etc)
 * **HATEOAS** : Hypermedia as the Engine of Application State; With HATEOAS, a client interacts with a network application whose application servers provide information dynamically through hypermedia
+* **Internationalization** : LocaleContextHolder, AcceptHeaderLocaleResolver
 
 # Startup
 * In IntelliJ, run maven goal spring-boot-run
@@ -19,6 +20,7 @@ For further reference, please consider the following sections:
 * [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.2.6.RELEASE/reference/htmlsingle/#using-boot-devtools)
 * [Spring Data JPA](https://docs.spring.io/spring-boot/docs/2.2.6.RELEASE/reference/htmlsingle/#boot-features-jpa-and-spring-data)
 * [Spring HATEOAS](https://docs.spring.io/spring-hateoas/docs/current/reference/html/#fundamentals.obtaining-links.builder.methods)
+* [Internationalization](https://docs.spring.io/spring-boot/docs/2.2.6.RELEASE/reference/htmlsingle/#boot-features-internationalization)
 
 # Guides
 The following guides illustrate how to use some features concretely:
