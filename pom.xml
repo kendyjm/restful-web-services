@@ -32,10 +32,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-hateoas</artifactId>
 		</dependency>
+
+		<!-- Content negociation : added this dependency to send response in xml
+		but I commented it now dur to swagger displayed API documentation in XML instead of JSON
+		I should look how to fix that but have no time for now
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
 		</dependency>
+		-->
 
 		<!-- Configuring Auto Generation of Swagger Documentation - START -->
 		<dependency>

@@ -3,12 +3,15 @@
 * Resources de la formation: [GitHub](http://github.com/in28minutes/spring-microservices) et [FAQ](https://github.com/in28minutes/in28minutes-initiatives/blob/master/The-in28Minutes-TroubleshootingGuide-And-FAQ/quick-start.md)
 
 # Keywords
-* **Service Definition** : [OData](https://www.odata.org) (standard for REST Service Definition), pas très utilisé, à voir si curieux...sinon en rester aux formats alternatifs (mais non standards) : WADL (pas populaire), et surtout Swagger.
+* **Service Definition** : 
+    * [OData](https://www.odata.org) (standard for REST Service Definition), pas très utilisé, à voir si curieux...sinon en rester aux formats alternatifs (mais non standards) : WADL (pas populaire), et surtout Swagger.
+    * Swagger : just put one dependency (springfox-swagger2) and a @Configuration (see SwaggerConfig class in this project) to get doc in json via endpoint /v2/api-docs , and another one (springfox-swagger-ui) to get Swagger UI via /swagger-ui.html
 * **Exception handling** : ResponseEntityExceptionHandler, @ControllerAdvice, ResponseEntity
 * **Validations** : @Valid, javax.validation.constraints.* (@Size, @Past etc)
 * **HATEOAS** : Hypermedia as the Engine of Application State; With HATEOAS, a client interacts with a network application whose application servers provide information dynamically through hypermedia
 * **Internationalization** : LocaleContextHolder, AcceptHeaderLocaleResolver
 * **Content Negociation** : just add `jackson-dataformat-xml` to support response in xml (just an example)
+
 
 # Startup
 * In IntelliJ, run maven goal spring-boot-run
