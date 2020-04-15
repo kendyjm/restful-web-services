@@ -1,11 +1,10 @@
 package com.in28minutes.rest.webservices.restfulwebservices.user;
 
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.hateoas.EntityModel;
-import org.springframework.hateoas.Link;
+import org.springframework.hateoas.Resource;
+import org.springframework.hateoas.mvc.ControllerLinkBuilder;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -22,13 +21,13 @@ public class UserResource {
 
     // GET /users
     @GetMapping(path = "/users")
-    public List<User> retrieveAllUsersUsers() {
+    public List<User> retrieveAllUsers() {
         return service.findAll();
     }
 
     // GET /users/{id}
     @GetMapping(path = "/users/{id}")
-    public EntityModel<User> retrieveUser(@PathVariable int id)
+    public Resource<User> retrieveUser(@PathVariable int id)
     {
         User user = service.findOne(id);
         if ( user == null ) {
@@ -39,11 +38,16 @@ public class UserResource {
         // add link to "all-users" to the response which should be useful : SERVER_PATH + "/users"
         // BUT hard code is bad, make it dynamic with the starter-hateoas to retrieve the link resource of method retrieveAllUsersUsers
         // https://docs.spring.io/spring-hateoas/docs/current/reference/html/#fundamentals.obtaining-links.builder.methods
+        /* 2.2.6 version of HATEOAS  (latest version)
         EntityModel<User> userEntityModel = new EntityModel<>(user);
         Link link = linkTo(methodOn(UserResource.class).retrieveAllUsersUsers()).withRel("all-users");
-        userEntityModel.add(link);
+        userEntityModel.add(link);return userEntityModel;
+         */
+        Resource<User> resource = new Resource<User>(user);
+        ControllerLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retrieveAllUsers());
+        resource.add(linkTo.withRel("all-users"));
 
-        return userEntityModel;
+        return resource;
     }
 
 
