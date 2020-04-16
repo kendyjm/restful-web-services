@@ -35,12 +35,12 @@
 
 		<!-- Content negociation : added this dependency to send response in xml
 		but I commented it now dur to swagger displayed API documentation in XML instead of JSON
-		I should look how to fix that but have no time for now
+		I should look how to fix that but have no time for now-->
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
 		</dependency>
-		-->
+
 
 		<!-- Configuring Auto Generation of Swagger Documentation - START -->
 		<dependency>
@@ -54,7 +54,24 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.9.2</version>
 		</dependency>
+
 		<!-- Configuring Auto Generation of Swagger Documentation - END -->
+
+		<!-- 38. Step 23 - Monitoring APIs with Spring Boot Actuator - START
+		@see https://www.udemy.com/course/microservices-with-spring-boot-and-spring-cloud/learn/lecture/8005670
+		add management.endpoints.web.exposure.include=* to have more infos in http://localhost:8080/actuator
+		use HAL to browse all endpoints, directly in root path: http://localhost:8080
+		-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-rest-hal-browser</artifactId>
+		</dependency>
+		<!-- Monitoring APIs with Spring Boot Actuator - END -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
