@@ -11,7 +11,7 @@
 * **HATEOAS** : Hypermedia as the Engine of Application State; With HATEOAS, a client interacts with a network application whose application servers provide information dynamically through hypermedia
 * **Internationalization** : LocaleContextHolder, AcceptHeaderLocaleResolver
 * **Content Negociation** : just add `jackson-dataformat-xml` to support response in xml (just an example)
-
+* **Monitoring** : actuator, hal browser, management.endpoints.web.exposure.include
 
 # Startup
 * In IntelliJ, run maven goal spring-boot-run
@@ -28,6 +28,7 @@ For further reference, please consider the following sections:
 * [Spring HATEOAS](https://docs.spring.io/spring-hateoas/docs/current/reference/html/#fundamentals.obtaining-links.builder.methods)
 * [Internationalization](https://docs.spring.io/spring-boot/docs/2.2.6.RELEASE/reference/htmlsingle/#boot-features-internationalization)
 * [Content Negociation](https://docs.spring.io/spring-boot/docs/2.2.6.RELEASE/reference/htmlsingle/#howto-write-an-xml-rest-service)
+* [Spring Boot Actuator](https://docs.spring.io/spring-boot/docs/2.2.6.RELEASE/reference/htmlsingle/#production-ready)
 
 # Guides
 The following guides illustrate how to use some features concretely:
@@ -36,4 +37,5 @@ The following guides illustrate how to use some features concretely:
 * [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
 * [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
 * [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+* [RESTful Web Service with Spring Boot Actuator](https://spring.io/guides/gs/actuator-service/)
 
