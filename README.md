@@ -12,6 +12,7 @@
 * **Internationalization** : LocaleContextHolder, AcceptHeaderLocaleResolver
 * **Content Negociation** : just add `jackson-dataformat-xml` to support response in xml (just an example)
 * **Monitoring** : actuator, hal browser, management.endpoints.web.exposure.include
+* **Static Filtering** : simply put an @JsonIgnore on each field to filter
 
 # Startup
 * In IntelliJ, run maven goal spring-boot-run
