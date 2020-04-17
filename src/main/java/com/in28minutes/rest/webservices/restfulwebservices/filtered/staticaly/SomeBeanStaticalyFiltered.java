@@ -1,8 +1,11 @@
-package com.in28minutes.rest.webservices.restfulwebservices.filtered;
+package com.in28minutes.rest.webservices.restfulwebservices.filtered.staticaly;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public class SomeBean {
+/*
+see @JsonIgnore  on field3Password
+ */
+public class SomeBeanStaticalyFiltered {
 
     private String field1;
     private  String field2;
@@ -10,7 +13,7 @@ public class SomeBean {
     @JsonIgnore
     private  String field3Password;
 
-    public SomeBean(String field1, String field2, String field3Password) {
+    public SomeBeanStaticalyFiltered(String field1, String field2, String field3Password) {
         this.field1 = field1;
         this.field2 = field2;
         this.field3Password = field3Password;
