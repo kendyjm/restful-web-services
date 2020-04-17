@@ -12,7 +12,8 @@
 * **Internationalization** : LocaleContextHolder, AcceptHeaderLocaleResolver
 * **Content Negociation** : just add `jackson-dataformat-xml` to support response in xml (just an example)
 * **Monitoring** : actuator, hal browser, management.endpoints.web.exposure.include
-* **Static Filtering** : simply put an @JsonIgnore on each field to filter
+* **Static Filtering** : simply put an `@JsonIgnore` on each field to filter
+* **Dynamic Filtering** : wrap the POJO into a `MappingJacksonValue` and pass it in to the RestTemplate; `SimpleBeanPropertyFilter`, `SimpleFilterProvider`, `@JsonFilter` in the POJO.
 
 # Startup
 * In IntelliJ, run maven goal spring-boot-run
