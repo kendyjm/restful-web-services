@@ -15,6 +15,8 @@
 * **Static Filtering** : simply put an `@JsonIgnore` on each field to filter
 * **Dynamic Filtering** : wrap the POJO into a `MappingJacksonValue` and pass it in to the RestTemplate (the biggest issue for me is the hardcoded fields name); `SimpleBeanPropertyFilter`, `SimpleFilterProvider`, `@JsonFilter` in the POJO.
     * As a user commented, `@JsonView` could be a good/better alternative; the biggest advantage of `@JsonView` is that there is no hardcoding of field names to filter, see https://spring.io/blog/2014/12/02/latest-jackson-integration-improvements-in-spring                  
+* **Versioning** : 2 main strategies: URI/REQUESTPARAM versioning or CUSTOMHEADER/MEDIATYPE versioning, the first one is maybe the best
+    * STARTING BUILDING OF AN API: CHOOSE YOUR VERSIONING STRATEGY !
 
 # Startup
 * In IntelliJ, run maven goal spring-boot-run
