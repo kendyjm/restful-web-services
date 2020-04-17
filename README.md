@@ -17,6 +17,7 @@
     * As a user commented, `@JsonView` could be a good/better alternative; the biggest advantage of `@JsonView` is that there is no hardcoding of field names to filter, see https://spring.io/blog/2014/12/02/latest-jackson-integration-improvements-in-spring                  
 * **Versioning** : 2 main strategies: URI/REQUESTPARAM versioning or CUSTOMHEADER/MEDIATYPE versioning, the first one is maybe the best
     * STARTING BUILDING OF AN API: CHOOSE YOUR VERSIONING STRATEGY !
+* **Basic Authentification** : just add `spring-boot-starter-security`as a dependency
 
 # Startup
 * In IntelliJ, run maven goal spring-boot-run
