@@ -13,7 +13,8 @@
 * **Content Negociation** : just add `jackson-dataformat-xml` to support response in xml (just an example)
 * **Monitoring** : actuator, hal browser, management.endpoints.web.exposure.include
 * **Static Filtering** : simply put an `@JsonIgnore` on each field to filter
-* **Dynamic Filtering** : wrap the POJO into a `MappingJacksonValue` and pass it in to the RestTemplate; `SimpleBeanPropertyFilter`, `SimpleFilterProvider`, `@JsonFilter` in the POJO.
+* **Dynamic Filtering** : wrap the POJO into a `MappingJacksonValue` and pass it in to the RestTemplate (the biggest issue for me is the hardcoded fields name); `SimpleBeanPropertyFilter`, `SimpleFilterProvider`, `@JsonFilter` in the POJO.
+    * As a user commented, `@JsonView` could be a good/better alternative; the biggest advantage of `@JsonView` is that there is no hardcoding of field names to filter, see https://spring.io/blog/2014/12/02/latest-jackson-integration-improvements-in-spring                  
 
 # Startup
 * In IntelliJ, run maven goal spring-boot-run
