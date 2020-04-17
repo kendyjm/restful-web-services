@@ -17,7 +17,7 @@
     * As a user commented, `@JsonView` could be a good/better alternative; the biggest advantage of `@JsonView` is that there is no hardcoding of field names to filter, see https://spring.io/blog/2014/12/02/latest-jackson-integration-improvements-in-spring                  
 * **Versioning** : 2 main strategies: URI/REQUESTPARAM versioning or CUSTOMHEADER/MEDIATYPE versioning, the first one is maybe the best
     * STARTING BUILDING OF AN API: CHOOSE YOUR VERSIONING STRATEGY !
-* **Basic Authentification** : just add `spring-boot-starter-security`as a dependency
+* **Security / Basic Authentification** : just add `spring-boot-starter-security`as a dependency
 
 # Startup
 * In IntelliJ, run maven goal spring-boot-run
@@ -35,6 +35,7 @@ For further reference, please consider the following sections:
 * [Internationalization](https://docs.spring.io/spring-boot/docs/2.2.6.RELEASE/reference/htmlsingle/#boot-features-internationalization)
 * [Content Negociation](https://docs.spring.io/spring-boot/docs/2.2.6.RELEASE/reference/htmlsingle/#howto-write-an-xml-rest-service)
 * [Spring Boot Actuator](https://docs.spring.io/spring-boot/docs/2.2.6.RELEASE/reference/htmlsingle/#production-ready)
+* [Spring Security](https://docs.spring.io/spring-boot/docs/2.2.6.RELEASE/reference/htmlsingle/#boot-features-security)
 
 # Guides
 The following guides illustrate how to use some features concretely:
@@ -44,4 +45,5 @@ The following guides illustrate how to use some features concretely:
 * [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
 * [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
 * [RESTful Web Service with Spring Boot Actuator](https://spring.io/guides/gs/actuator-service/)
+* [Securing a Web Application](https://spring.io/guides/gs/securing-web/)
 
