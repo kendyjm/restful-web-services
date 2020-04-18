@@ -32,10 +32,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-hateoas</artifactId>
 		</dependency>
+
+		<!-- désactivé par simplicité pour la suite (jpa)
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+		-->
 
 		<!-- Content negociation : added this dependency to send response in xml
 		but I commented it now dur to swagger displayed API documentation in XML instead of JSON
