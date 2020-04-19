@@ -72,9 +72,11 @@ public class UserJPAResource {
 
     // DELETE /users/{id}
     @DeleteMapping(path = "/jpa/users/{id}")
-    public void deleteUser(@PathVariable int id)
+    public ResponseEntity<Object> deleteUser(@PathVariable int id)
     {
         userRepository.deleteById(id);
+        // 204 HTTPSTATUS No Content : The request succeeded but there is nothing to show. Usually sent after a successful DELETE.
+        return ResponseEntity.noContent().build();
     }
 
 
