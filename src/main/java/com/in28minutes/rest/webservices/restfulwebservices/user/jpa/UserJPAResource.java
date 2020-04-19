@@ -1,8 +1,8 @@
 package com.in28minutes.rest.webservices.restfulwebservices.user.jpa;
 
 
+import com.in28minutes.rest.webservices.restfulwebservices.user.Post;
 import com.in28minutes.rest.webservices.restfulwebservices.user.User;
-import com.in28minutes.rest.webservices.restfulwebservices.user.UserDaoService;
 import com.in28minutes.rest.webservices.restfulwebservices.user.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Resource;
@@ -73,6 +73,20 @@ public class UserJPAResource {
     public void deleteUser(@PathVariable int id)
     {
         userRepository.deleteById(id);
+    }
+
+
+    ///// POSTS
+    // GET /users
+    @GetMapping(path = "/jpa/users/{id}/posts")
+    public List<Post> retrieveAllPostsOfAUser(@PathVariable int id) {
+        Optional<User> user = userRepository.findById(id);
+        if(!user.isPresent())
+        {
+            throw new UserNotFoundException("id-"+id);
+        }
+
+        return user.get().getPosts();
     }
 
 }

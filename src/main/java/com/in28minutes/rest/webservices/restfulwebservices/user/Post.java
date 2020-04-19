@@ -1,5 +1,6 @@
 package com.in28minutes.rest.webservices.restfulwebservices.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -18,5 +19,6 @@ public class Post {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @ToString.Exclude
+    @JsonIgnore // pour éviter qu'à l'affichage d'un user et donc de son field 'posts' il n'y ait récursivité infinie...
     private User userPoster;
 }
