@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @lombok.Getter
 @lombok.Setter
@@ -15,6 +16,8 @@ public class Post {
     // avec GenerationType.Identity je m'assure que le prochain id inséré prendra en compte les données déjà existantes dans la bdd
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Size(min = 1)
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)

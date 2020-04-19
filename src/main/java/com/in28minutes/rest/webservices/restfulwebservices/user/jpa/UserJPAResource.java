@@ -24,6 +24,8 @@ public class UserJPAResource {
 
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private PostRepository postRepository;
 
     // GET /users
     @GetMapping(path = "/jpa/users")
@@ -77,7 +79,7 @@ public class UserJPAResource {
 
 
     ///// POSTS
-    // GET /users
+    // GET users posts
     @GetMapping(path = "/jpa/users/{id}/posts")
     public List<Post> retrieveAllPostsOfAUser(@PathVariable int id) {
         Optional<User> user = userRepository.findById(id);
@@ -89,4 +91,19 @@ public class UserJPAResource {
         return user.get().getPosts();
     }
 
+    // created a post for a user
+    @PostMapping(path = "/jpa/users/{id}/posts")
+    public ResponseEntity<Object> createUserPost(@PathVariable int id, @Valid @RequestBody Post post) {
+        Optional<User> user = userRepository.findById(id);
+        if(!user.isPresent())
+        {
+            throw new UserNotFoundException("id-"+id);
+        }
+
+        post.setUserPoster(user.get());
+
+        Post savedPost = postRepository.save(post);
+        URI myLocation = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(savedPost.getId()).toUri();
+        return ResponseEntity.created(myLocation).build(); // see the 'Location' key in header !
+    }
 }
