@@ -18,8 +18,8 @@
 * **Versioning** : 2 main strategies: URI/REQUESTPARAM versioning or CUSTOMHEADER/MEDIATYPE versioning, the first one is maybe the best
     * STARTING BUILDING OF AN API: CHOOSE YOUR VERSIONING STRATEGY !
 * **Security / Basic Authentification** : just add `spring-boot-starter-security`as a dependency
-* **REST best practices** :
-    * Richardson Maturity Model
+* **REST best practices** : [See Octo Technology Reference Card, a MUST READ!!](https://blog.octo.com/wp-content/uploads/2014/12/OCTO-Refcard_API_Design_EN_3.0.pdf)
+    * [Richardson Maturity Model](https://martinfowler.com/articles/richardsonMaturityModel.html)
          * Level 0 : exposer les webservices SOAP en REST-style
             * http://server/getPosts
             * http://server/deletePosts
