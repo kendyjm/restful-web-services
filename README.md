@@ -18,20 +18,40 @@
 * **Versioning** : 2 main strategies: URI/REQUESTPARAM versioning or CUSTOMHEADER/MEDIATYPE versioning, the first one is maybe the best
     * STARTING BUILDING OF AN API: CHOOSE YOUR VERSIONING STRATEGY !
 * **Security / Basic Authentification** : just add `spring-boot-starter-security`as a dependency
-* **REST best practices** : Richardson Maturity Model
-     * Level 0 : exposer les webservices SOAP en REST-style
-        * http://server/getPosts
-        * http://server/deletePosts
-        * http://server/doThis
-     * Level 1 : exposer les RESOURCES avec les URI qui conviennent (sans encore utiliser les bonnes méthodes HTTP)
-        * http://server/accounts
-        * http://server/accounts/10
-     * Level 2 : Level 1 + utilisation correcte des méthodes HTTP
-        * (GET|POST) http://server/accounts
-        * (GET|UPDATE|DELETE) http://server/accounts/10  
-     * Level 3 : Level 2 + HATEOAS
-        * return DATA + NEXT POSSIBLE ACTIONS
-
+* **REST best practices** :
+    * Richardson Maturity Model
+         * Level 0 : exposer les webservices SOAP en REST-style
+            * http://server/getPosts
+            * http://server/deletePosts
+            * http://server/doThis
+         * Level 1 : exposer les RESOURCES avec les URI qui conviennent (sans encore utiliser les bonnes méthodes HTTP)
+            * http://server/accounts
+            * http://server/accounts/10
+         * Level 2 : Level 1 + utilisation correcte des méthodes HTTP
+            * (GET|POST) http://server/accounts
+            * (GET|PUT|DELETE) http://server/accounts/10  
+         * Level 3 : Level 2 + HATEOAS
+            * return DATA + NEXT POSSIBLE ACTIONS
+    * Le client doit comprendre les WS
+        *   avoir une documentation suffisante et compréhensible
+    * Utiliser au mieux les possibilités offertes par HTTP
+        * Notamment en utilisant ses méthodes (GET, PUT, POST, DELETE) de façon appropriée
+        * Renvoyer le satut de réponse le plus approprié (pas juste un 200, mais un 201 lors d'une création)
+            * 200 - success
+            * 404 - resource not found
+            * 400 - bad request
+            * 201 - created
+            * 401 - unauthorized
+            * 500 - server error
+        * Pas d'informations sensibles dans les URI
+        * Préférer le PLURIEL au SINGULIER
+            * Préférer /users à /user
+            * Préférer /users/1 to /user/1
+        * Préférer des NOMS plutôt que des VERBES pour les resources
+            * Préférer DELETE /users/1 plutôt que DELETE /deleteUser/1
+            * PUT /posts/{id}/star // pour ajouter une étoile à un post
+            * DELETE /posts/{id}/star // pour supprimer une étoile à un post
+            
          
 # Startup
 * In IntelliJ, run maven goal spring-boot-run
