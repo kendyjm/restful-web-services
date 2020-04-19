@@ -18,11 +18,26 @@
 * **Versioning** : 2 main strategies: URI/REQUESTPARAM versioning or CUSTOMHEADER/MEDIATYPE versioning, the first one is maybe the best
     * STARTING BUILDING OF AN API: CHOOSE YOUR VERSIONING STRATEGY !
 * **Security / Basic Authentification** : just add `spring-boot-starter-security`as a dependency
+* **REST best practices** : Richardson Maturity Model
+     * Level 0 : exposer les webservices SOAP en REST-style
+        * http://server/getPosts
+        * http://server/deletePosts
+        * http://server/doThis
+     * Level 1 : exposer les RESOURCES avec les URI qui conviennent (sans encore utiliser les bonnes méthodes HTTP)
+        * http://server/accounts
+        * http://server/accounts/10
+     * Level 2 : Level 1 + utilisation correcte des méthodes HTTP
+        * (GET|POST) http://server/accounts
+        * (GET|UPDATE|DELETE) http://server/accounts/10  
+     * Level 3 : Level 2 + HATEOAS
+        * return DATA + NEXT POSSIBLE ACTIONS
 
+         
 # Startup
 * In IntelliJ, run maven goal spring-boot-run
 * Enable Devtools with IntelliJ : https://mkyong.com/spring-boot/intellij-idea-spring-boot-template-reload-is-not-working/
- 
+
+
 # Reference Documentation
 For further reference, please consider the following sections:
 
