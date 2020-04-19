@@ -59,7 +59,7 @@ public class UserResource {
     public ResponseEntity<Object> createUser(@Valid @RequestBody User user) {
         User savedUser = service.save(user);
         URI myLocation = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(savedUser.getId()).toUri();
-        return ResponseEntity.created(myLocation).build();
+        return ResponseEntity.created(myLocation).build(); // see the 'Location' key in header !
     }
 
     // GET /users/{id}

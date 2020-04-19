@@ -23,8 +23,6 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 public class UserJPAResource {
 
     @Autowired
-    private UserDaoService service;
-    @Autowired
     private UserRepository userRepository;
 
     // GET /users
@@ -65,19 +63,16 @@ public class UserJPAResource {
     // output - created & return the created URI
     @PostMapping(path = "/jpa/users")
     public ResponseEntity<Object> createUser(@Valid @RequestBody User user) {
-        User savedUser = service.save(user);
+        User savedUser = userRepository.save(user);
         URI myLocation = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(savedUser.getId()).toUri();
-        return ResponseEntity.created(myLocation).build();
+        return ResponseEntity.created(myLocation).build(); // see the 'Location' key in header !
     }
 
-    // GET /users/{id}
+    // DELETE /users/{id}
     @DeleteMapping(path = "/jpa/users/{id}")
     public void deleteUser(@PathVariable int id)
     {
-        User user = service.delete(id);
-        if ( user == null ) {
-            throw new UserNotFoundException("id-"+id); // see @ResponseStatus(HttpStatus.NOT_FOUND) in this class
-        }
+        userRepository.deleteById(id);
     }
 
 }

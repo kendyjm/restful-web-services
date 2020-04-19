@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiParam;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
@@ -15,7 +16,8 @@ import java.util.Date;
 @Entity // JPA
 public class User {
     @Id
-    @GeneratedValue
+    // avec GenerationType.Identity je m'assure que le prochain id inséré prendra en compte les données déjà existantes dans la bdd
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Size(min = 2, message = "Name should have at least 2 characters")
