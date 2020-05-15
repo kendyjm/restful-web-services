@@ -5,6 +5,14 @@
 * Formation: <https://www.udemy.com/course/microservices-with-spring-boot-and-spring-cloud>
 * Resources de la formation: [GitHub](https://github.com/in28minutes/spring-microservices/tree/master/02.restful-web-services) et [FAQ](https://github.com/in28minutes/in28minutes-initiatives/blob/master/The-in28Minutes-TroubleshootingGuide-And-FAQ/quick-start.md)
 
+Instructor:
+
+* [Ranga Rao Karanam](https://www.linkedin.com/in/rangakaranam)
+
+### Udemy Certificate of completion
+
+<https://www.udemy.com/certificate/UC-ed0e4498-34b0-485f-bce4-54782fc08206/>
+
 ## Content
 
 * What is a RESTful Web Service?
@@ -21,6 +29,7 @@
 * How to monitor RESTful Services with Spring Boot Actuator?
 * How to document RESTful Web Services with Swagger?
 * How to connect RESTful Services to a backend with JPA?
+
 
 ## Keywords
 
