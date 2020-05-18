@@ -66,7 +66,7 @@ Instructor:
     * avoir une documentation suffisante et compréhensible
   * Utiliser au mieux les possibilités offertes par HTTP
     * Notamment en utilisant ses méthodes (GET, PUT, POST, DELETE) de façon appropriée
-    * Renvoyer le satut de réponse le plus approprié (pas juste un 200, mais un 201 lors d'une création)
+    * [Renvoyer le satut de réponse le plus approprié](https://www.restapitutorial.com/httpstatuscodes.html) (pas juste un 200, mais un 201 par exemple lors d'une création)
       * 200 - success
       * 404 - resource not found
       * 400 - bad request
